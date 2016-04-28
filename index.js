@@ -6,6 +6,8 @@ var fs = require('fs');
 var mustache = require('mustache');
 
 http.listen(3000);
+
+app.use('/', express.static(__dirname + '/views'));
 app.set('views', __dirname+'/views');
 app.set('view engine', 'mustache');
 /*app.set('view engine', 'mustache');
@@ -28,7 +30,7 @@ app.get('/recipes', function(req, res){
     //var page = fs.readFileSync('listing.html', "utf8"); // bring in the HTML file
     var rData = response.body;
     console.log(response.body);
-    var html = mustache.to_html(loadTemplate('listing'), rData);
+    var html = mustache.to_html(loadTemplate('listAll'), rData);
     res.send(html);
     //console.log(response.body);
 });

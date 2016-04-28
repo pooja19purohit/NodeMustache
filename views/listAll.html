@@ -1,0 +1,122 @@
+<html lang="en" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths skrollr skrollr-desktop">
+  <head>
+    <!-- Basic need -->
+    <title>Culinier Template</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <link rel="profile" href="#">
+    <link rel="shortcut icon" href="./images/favicon.ico">
+    <!-- Mobile specific meta -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone-no">
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Raleway:300,400,700,900" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet" type="text/css">
+    <!-- CSS files -->
+    <link rel="stylesheet" href="./css/plugins.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- JS files -->
+    <script src="./js/jquery.js"></script>
+    <script>
+      var counter = 0;
+      var positionLeft = 0;
+      var positionTop = 0;
+    </script>
+  </head>
+  <body>
+    <div class="ht-page-wrapper">
+      <!-- BEGIN | Header -->
+      <header id="ht-header" class="">
+        <!-- available classes: logo-center, logo-left -->
+        <div id="undefined-sticky-wrapper" class="sticky-wrapper" style="height: 100px;">
+          <div class="ht-main-navbar logo-center sticky-nav scroll-up-nav">
+            <div class="container">
+              <div class="inner">
+                <h1 id="ht-logo">
+                  <a href="#">
+                  <img src="./images/logo.png" alt="">
+                  </a>
+                  Realty
+                </h1>
+                <!-- / #logo -->
+                <!-- / .pull-right -->
+              </div>
+              <!-- / .inner -->
+            </div>
+            <!-- / .container -->
+            <button type="button" class="search-toggle" data-toggle="modal" data-target="#ht-search-form">
+            <span class="inner">
+            <i class="fa fa-search"></i>
+            </span>
+            </button>
+            <!-- ./ button#ht-search-form -->
+          </div>
+        </div>
+        <!-- / .ht-container -->
+      </header>
+      <!-- END | Header -->
+      <section class="ht-section hs-recipes grid">
+        <header class="hs-header">
+          <div class="container">
+            <h2 class="heading">All Recipes</h2>
+          </div>
+        </header>
+        <div class="hs-content">
+          <div class="container">
+            <div class="row">
+              <div class="isotope-grid" id="grid-2" style="position: relative; height: 1015.97px;">
+                {{#.}}
+                <script>
+                  console.log(counter);
+                  /*if(counter > 3 && counter%3 == 0) {
+                    positionTop = positionTop + 338;
+                    positionLeft = 0;
+                  }
+                  else if(counter!=0) {
+                    positionLeft = positionLeft + 293;
+                  }*/
+                  counter = counter + 1;
+                  htmlCode = '<div class="entry col-xs-12 col-sm-4 col-md-3" style="position: absolute;' + 'left: ' + positionLeft + 'px; top:' + positionTop + 'px;">'
+                    +'<div class="entry-inner"> <div class="entry-media"> <img src="./images/dishes/dish_1.jpg" alt=""> </div> <div class="content-wrapper">'
+                      +'<h3 class="entry-name"><a>{{name}}</a></h3>'
+                      +'<p class="entry-author">counter</p>'
+                      +'<div class="entry-meta">'
+                      +'<div class="foo-wrapper">'
+                      +'<span class="meta-difficulty easy" title="">{{difficultyLevel}}</span>'
+                      +'<span class="meta-time">3 minutes</span>'
+                        +'</div></div></div></div>'
+                  $("#grid-2").append(htmlCode);
+                  positionLeft = positionLeft + 293;
+                  if(counter%4 == 0) {
+                    console.log(positionTop);
+                    positionTop = positionTop + 338;
+                    positionLeft = 0;
+                  }
+                  //if counter % 3 == 0 , increase top, else just increase left
+                </script>
+
+                {{/.}}
+              </div>
+              <!-- / .isotope-entry -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container -->
+        </div>
+        <!-- /.ht-products.grid -->
+      </section>
+      <!-- /.ht-section -->
+      <section class="ht-section hs-footer-widget">
+      </section>
+      <footer id="ht-footer">
+        <div class="container">
+        </div>
+      </footer>
+    </div>
+    <!-- ./ht-page-wrapper -->
+    <script src="./js/plugins.js"></script>
+    <script src="./js/custom.js"></script>
+  </body>
+</html>
