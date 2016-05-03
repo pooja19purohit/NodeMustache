@@ -45,13 +45,6 @@
               </div>
               <!-- / .inner -->
             </div>
-            <!-- / .container -->
-            <button type="button" class="search-toggle" data-toggle="modal" data-target="#ht-search-form">
-            <span class="inner">
-            <i class="fa fa-search"></i>
-            </span>
-            </button>
-            <!-- ./ button#ht-search-form -->
           </div>
         </div>
         <!-- / .ht-container -->
@@ -78,7 +71,7 @@
                     positionLeft = positionLeft + 293;
                   }*/
                   counter = counter + 1;
-                  htmlCode = '<div class="entry col-xs-12 col-sm-4 col-md-3" style="position: absolute;' + 'left: ' + positionLeft + 'px; top:' + positionTop + 'px;">'
+                  htmlCode = '<a href="/getRecipe/name/{{name}}"><div class="entry col-xs-12 col-sm-4 col-md-3" style="position: absolute;' + 'left: ' + positionLeft + 'px; top:' + positionTop + 'px;">'
                     +'<div class="entry-inner"> <div class="entry-media"> <img src="./images/dishes/dish_1.jpg" alt=""> </div> <div class="content-wrapper">'
                       +'<h3 class="entry-name"><a>{{name}}</a></h3>'
                       +'<p class="entry-author">counter</p>'
@@ -86,7 +79,7 @@
                       +'<div class="foo-wrapper">'
                       +'<span class="meta-difficulty easy" title="">{{difficultyLevel}}</span>'
                       +'<span class="meta-time">3 minutes</span>'
-                        +'</div></div></div></div>'
+                        +'</div></div></div></div></a>'
                   $("#grid-2").append(htmlCode);
                   positionLeft = positionLeft + 293;
                   if(counter%4 == 0) {

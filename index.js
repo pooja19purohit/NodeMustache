@@ -20,7 +20,7 @@ console.log("----------");
 console.log("Server started");
 
 function loadTemplate(template) {
-  console.log((app.get('views') + '/' +template+ '.html').toString());
+  //console.log((app.get('views') + '/' +template+ '.html').toString());
     return fs.readFileSync(app.get('views') + '/' +template+ '.html').toString();
 }
 
@@ -29,10 +29,23 @@ app.get('/recipes', function(req, res){
   .end(function (response) {
     //var page = fs.readFileSync('listing.html', "utf8"); // bring in the HTML file
     var rData = response.body;
-    console.log(response.body);
+    //console.log(response.body);
     var html = mustache.to_html(loadTemplate('listAll'), rData);
     res.send(html);
     //console.log(response.body);
+});
+});
+
+app.get('/getRecipe/:name/:value', function(req, res){
+  unirest.get('https://unhrecipe.herokuapp.com/rest/recipes/getone/' + req.params.name + '/' + req.params.value)
+  .end(function (response) {
+    //var page = fs.readFileSync('listing.html', "utf8"); // bring in the HTML file
+    var rData = response.body;
+    console.log(response.body);
+    var html = mustache.to_html(loadTemplate('recipePage'), rData);
+    res.send(html);
+    //console.log(response.body);
+});
 });
 
     //Setup your client
@@ -54,4 +67,3 @@ app.get('/recipes', function(req, res){
     });
     request.end();
     res.send(response); //Print the response to the screen*/
-});
