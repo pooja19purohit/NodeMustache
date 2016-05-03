@@ -4,16 +4,15 @@ var http           = require('http').Server(app);
 var unirest        = require('unirest');
 var fs = require('fs');
 var mustache = require('mustache');
+var bodyParser     = require('body-parser');
 
 http.listen(3000);
 
 app.use('/', express.static(__dirname + '/views'));
 app.set('views', __dirname+'/views');
 app.set('view engine', 'mustache');
-/*app.set('view engine', 'mustache');
-  app.set('views', __dirname + '/');
-  //app.register(".mustache", require('stache'));
-  app.use(express.static(__dirname + '/'));*/
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 
 console.log("----------");
@@ -46,6 +45,16 @@ app.get('/getRecipe/:name/:value', function(req, res){
     res.send(html);
     //console.log(response.body);
 });
+});
+
+app.post('/postRecipe' , function(req,res) {
+  unirest.post('https://unhrecipe.herokuapp.com/rest/recipes/createRecipe')
+  .type('json')
+  .send(req.body)
+  .end(function (response) {
+  console.log(response);
+})
+
 });
 
     //Setup your client

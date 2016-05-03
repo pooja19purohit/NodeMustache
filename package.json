@@ -9,6 +9,7 @@
   "author": "Pooja",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "http": "0.0.0",
     "mustache": "^2.2.1",
