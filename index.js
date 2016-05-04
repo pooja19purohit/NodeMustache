@@ -6,20 +6,24 @@ var fs = require('fs');
 var mustache = require('mustache');
 var bodyParser     = require('body-parser');
 
-http.listen(3000);
+//process.env.PORT lets the port be set by Heroku
+var port = process.env.PORT || 3000;
+http.listen(port, function() {
+    console.log('Our app is running on http://localhost:' + port);
+});
 
+app.use(express.static(__dirname + '/views'));
 app.use('/', express.static(__dirname + '/views'));
 app.set('views', __dirname+'/views');
 app.set('view engine', 'mustache');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
-
 console.log("----------");
 console.log("Server started");
 
 function loadTemplate(template) {
-  //console.log((app.get('views') + '/' +template+ '.html').toString());
+   console.log((app.get('views') + '/' +template+ '.html').toString());
     return fs.readFileSync(app.get('views') + '/' +template+ '.html').toString();
 }
 
@@ -38,12 +42,9 @@ app.get('/recipes', function(req, res){
 app.get('/getRecipe/:name/:value', function(req, res){
   unirest.get('https://unhrecipe.herokuapp.com/rest/recipes/getone/' + req.params.name + '/' + req.params.value)
   .end(function (response) {
-    //var page = fs.readFileSync('listing.html', "utf8"); // bring in the HTML file
-    var rData = response.body;
-    console.log(response.body);
-    var html = mustache.to_html(loadTemplate('recipePage'), rData);
+    var recipeData = response.body;
+    var html = mustache.to_html(loadTemplate('recipePage'), recipeData);
     res.send(html);
-    //console.log(response.body);
 });
 });
 
@@ -53,8 +54,29 @@ app.post('/postRecipe' , function(req,res) {
   .send(req.body)
   .end(function (response) {
   console.log(response);
-})
+});
 
+});
+
+app.post('/searchQuery' , function(req,res) {
+  if(req.body.filterField!= null && req.body.filterValue != null) {
+    unirest.get('https://unhrecipe.herokuapp.com/rest/recipes/search/filter/' + req.body.filterField + '/' + req.body.filterValue)
+    .query({"q" : req.body.query})
+    .end(function (response) {
+      var rData = response.body;
+      var html = mustache.to_html(loadTemplate('listAll'), rData);
+      res.send(html);
+  });
+}
+else {
+  unirest.get('https://unhrecipe.herokuapp.com/rest/recipes/search')
+  .query({"q" : req.body.query})
+  .end(function (response) {
+    var rData = response.body;
+    var html = mustache.to_html(loadTemplate('listAll'), rData);
+    res.send(html);
+});
+}
 });
 
     //Setup your client

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7 no-js" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8 no-js" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en" class="no-js">
+<head>
+	<!-- Basic need -->
+	<title>Recipe App</title>
+	<meta charset="UTF-8">
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Raleway:300,400,700,900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Dosis:700' rel='stylesheet' type='text/css'>
+
+	<!-- CSS files -->
+	<link rel="stylesheet" href="css/plugins.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- JS files -->
+	<script src="js/jquery.js"></script>
+</head>
+<body>
+
+<div class="ht-page-wrapper">
+
+
+<!-- BEGIN | Header -->
+<header id="ht-header" class="">
+	<div class="mobile-control-toggle">
+		<div class="container">
+			<button type="button" class="mobile-nav-toggle" data-target="#menu-list">
+				<span class="sr-only">Toggle mobile menu</span>
+				<span class="icon-bar icon-bar-1"></span>
+				<span class="icon-bar icon-bar-2"></span>
+				<span class="icon-bar icon-bar-3"></span>
+			</button>
+		</div>
+	</div>
+
+	<!-- available classes: logo-center, logo-left -->
+	<div class="ht-main-navbar logo-center sticky-nav scroll-up-nav">
+		<div class="container">
+			<div class="inner">
+				<h1 id="ht-logo">
+					<a href="index.html">
+						<img src="images/logo.png" alt="">
+					</a>
+				</h1>
+				<!-- / #logo -->
+				<div class="ht-main-nav-wrapper">
+					<nav id="ht-main-nav">
+						<ul>
+							<li class="current-menu-item menu-item-has-children dropdown-menu">
+								<a href="/recipes">ALL RECIPES</a>
+							</li>
+							<!-- available classes: mega-menu,active -->
+							<li class="menu-item-has-children dropdown-menu">
+								<a href="search.html">SEARCH RECIPE</a>
+							</li>
+							<li class="menu-item-has-children dropdown-menu">
+								<a href="submitRecipe.html">SUBMIT RECIPE</a>
+							</li>
+						</ul>
+						<ul>
+							<li><a href="">GET SINGLE RECIPE</a></li>
+
+							<li><a href="">GET APP DETAILS</a></li>
+						</ul>
+					</nav>
+					<!-- / #ht-main-nav -->
+				</div>
+				<!-- / .pull-right -->
+			</div>
+			<!-- / .inner -->
+		</div>
+		<!-- / .container -->
+	</div>
+	<!-- / .ht-container -->
+</header>
+<!-- END | Header -->
+
+
+<section class="hs-slider single flexslider basic"
+         data-auto="true"
+         data-effect="fade"
+         data-navi="true"
+         data-pager="true"
+         data-slide-speed="5000"
+         data-animation-speed="1000"
+        >
+    <ul class="slides">
+        <li style="background-image: url('images/slides/1.jpg')" data-ht-parallax="500">
+            <div class="overlay"></div>
+            <div class="slide-content-wrapper container">
+                <div class="slide-content">
+                    <h3 class="entry-big">Being Smart Chef Every Day</h3>
+                    <p class="entry-small">STORE ALL YOUR RECIPES</p>
+                    <a class="entry-button" href="recipe_index.html">SEE ALL RECIPES</a>
+                </div>
+            </div>
+        </li>
+        <li style="background-image: url('images/slides/2.jpg')" data-ht-parallax="500">
+            <div class="overlay"></div>
+            <div class="slide-content-wrapper container">
+                <div class="slide-content">
+                    <h3 class="entry-big">RECIPE APP</h3>
+                    <p class="entry-small">USING WEB SERVICES</p>
+                    <a class="entry-button" href="/recipes">SEE ALL RECIPES</a>
+                </div>
+            </div>
+        </li>
+        <li style="background-image: url('images/slides/3.jpg')" data-ht-parallax="500">
+            <div class="overlay"></div>
+            <div class="slide-content-wrapper container">
+                <div class="slide-content">
+                    <h3 class="entry-big">Recipe Diary to Store all your recipes</h3>
+                    <p class="entry-small">FIND YOUR OWN RECIPES AT GO</p>
+                    <a class="entry-button" href="/recipes">SEE ALL RECIPES</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</section>
+
+<footer id="ht-footer">
+</footer>
+</div>
+<!-- ./ht-page-wrapper -->
+
+<script src="js/plugins.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>
