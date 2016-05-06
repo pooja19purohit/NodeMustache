@@ -1,31 +1,7 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @pooja19purohit
- Watch 1
-  Star 1
-  Fork 2 krisrak/bootstrap-like-documentation-template
- Code  Issues 0  Pull requests 0  Wiki  Pulse  Graphs
-Branch: master Find file Copy pathbootstrap-like-documentation-template/index.html
-55ced2f  on Feb 3, 2014
-@krisrak krisrak added template index.html
-1 contributor
-RawBlameHistory     468 lines (418 sloc)  16.7 KB
-
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="favicon.ico">
-
-    <title>Documentation Template</title>
+    <title>Recipe App Documentation</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -47,377 +23,508 @@ RawBlameHistory     468 lines (418 sloc)  16.7 KB
 
   </head>
 
-  <body>
+  <body style="width:100%;">
 
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Documentation</a>
-        </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav" id="tabs">
             <li><a href="#components" data-toggle="tab">Components</a></li>
-            <li><a href="#about" data-toggle="tab">About</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
 
-    <div class="content container tab-content">
-
-      <div class="tab-pane active" id="home">
-        <div class="jumbotron">
-          <h1>Some Framework</h1>
-          <p>This is a template for a documentation website for a programming framework or library. It includes a template for components description with a navigation list.</p>
-          <p><a href="#" class="btn btn-primary btn-lg" role="button">Download &darr;</a></p>
-        </div>
-      </div>
-
+    <div class="content">
       <div class="tab-pane" id="components">
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-3" style="width:20%">
             <div class="list-group">
-              <a href="#item1" class="list-group-item">Item #1</a>
-              <a href="#item2" class="list-group-item">Item #2</a>
-              <a href="#item3" class="list-group-item">Item #3</a>
-              <a href="#item4" class="list-group-item">Item #4</a>
-              <a href="#item5" class="list-group-item">Item #5</a>
+              <a href="#item1" class="list-group-item">GET RECIPE API</a>
+              <a href="#item2" class="list-group-item">GET ALL RECIPES API</a>
+              <a href="#item3" class="list-group-item">SEARCH RECIPE API</a>
+              <a href="#item4" class="list-group-item">GET RECIPE DETAILS BY PROPERTIES FILE</a>
+              <a href="#item5" class="list-group-item">POST RECIPE API</a>
+              <a href="#item6" class="list-group-item">PUT RECIPE API</a>
+              <a href="#item7" class="list-group-item">DELETE RECIPE API</a>
             </div>
           </div><!-- /.col-sm-4 -->
           <div class="col-sm-9">
             <h1>Components</h1>
-            <p class="lead">This page contains few sections with corresponding navigation items on the left side. </p>
-            <hr>
-            <div id="item1" class="content section">
-              <h3>Item #1</h3>
-              <p>This is a section, add any HTML here. Below is an example of code block and table that can be used to describe components.</p>
+            <p class="lead">This is an overview of how our APIs can be used</p>
+            <div id="item1" class="content section" style="table-layout:fixed;">
+              <h3>Get Recipe</h3>
+              <p>Get recipe by key:value pair</p>
 
-              <h4>Method</h4>
-              <p>Here is example of <code>highlighted</code> code element, by embedding in <code>&lt;code&gt;</code> tag, be sure to escape &lt; and &gt;</p>
-              <pre>
-function foo(){
-  return bar;
-}             </pre>
-
-              <h4>Options</h4>
-              <p>This is a section, add any HTML here. Below is an example of table that can be used to describe options.</p>
-              <table class="table table-bordered">
+              <h4>REQUEST</h4>
+              <table class="table table-bordered" style="table-layout:fixed;">
                 <thead>
                    <tr>
-                     <th>name</th>
-                     <th>type</th>
-                     <th>description</th>
+                     <th>METHOD</th>
+                     <th>URL</th>
+                     <th>PARAMS</th>
+                     <th>EXAMPLE</th>
                    </tr>
                 </thead>
                 <tbody>
                    <tr>
-                     <td>text</td>
-                     <td>string</td>
-                     <td>title to display</td>
-                   </tr>
-                   <tr>
-                     <td>padding</td>
-                     <td>number</td>
-                     <td>padding around text</td>
+                     <td style="word-wrap: break-word;">GET</td>
+                     <td style="word-wrap: break-word;">https://unhrecipe.herokuapp.com/rest/recipes/getone</td>
+                     <td>{name},{value}</td>
+                     <td style="word-wrap: break-word;"><a target="_blank" href="https://unhrecipe.herokuapp.com/rest/recipes/getone/name/Dry%20Aloo%20Gobi">https://unhrecipe.herokuapp.com/rest/recipes/getone/name/Dry%20Aloo%20Gobi</a></td>
                    </tr>
                 </tbody>
               </table>
-
-              <h4>Events</h4>
-              <p>This is a section, add any HTML here. Below is an example of table that can be used to describe events.</p>
+              <h4>RESPONSE</h4>
               <table class="table table-bordered">
                 <thead>
                    <tr>
-                     <th>event name</th>
-                     <th>description</th>
+                     <th>STATUS</th>
+                     <th>RESPONSE</th>
                    </tr>
                 </thead>
                 <tbody>
                    <tr>
-                     <td>click</td>
-                     <td>triggered when element is clicked</td>
+                     <td>200</td>
+                     <td>{"name":"Dry Aloo Gobi","difficultyLevel":"Medium","recipeCategory":"Side Dish","cuisine":"Indian","prepTime":"00:45","cookTime":"00:15","recipePhotoLink":"http://media1.sailusfood.com/wp-content/uploads/2008/11/aloo-gobhi1.jpg","ingredients":null,"direction":null,"additionalNote":null,"yields":"4 servings","nutritionFacts":{"saturatedFat":"50","totalFat":"100","ServingSize":"2","calories":"100"}}</td>
+                   </tr>
+                   <tr>
+                     <td>400</td>
+                     <td>{"There was an error getting the recipe"}</td>
                    </tr>
                 </tbody>
               </table>
-
-              <h4>Example</h4>
-              <p>Below is an example code block and demo button.</p>
-              <pre>
-function foo(){
-  return bar;
-}             </pre>
-              <a class="btn btn-primary">Demo</a>
             </div>
-
-            <hr>
             <div id="item2" class="content section">
-              <h3>Item #2</h3>
-              <p>This is a section, add any HTML here. Below is an example of code block and table that can be used to describe components.</p>
-
-              <h4>Method</h4>
-              <p>Here is example of <code>highlighted</code> code element, by embedding in <code>&lt;code&gt;</code> tag, be sure to escape &lt; and &gt;</p>
-              <pre>
-function foo(){
-  return bar;
-}             </pre>
-
-              <h4>Options</h4>
-              <p>This is a section, add any HTML here. Below is an example of table that can be used to describe options.</p>
-              <table class="table table-bordered">
+              <h3>Get All Recipes</h3>
+              <p>Get all recipes in the database</p>
+              <h4>REQUEST</h4>
+              <table class="table table-bordered" style="table-layout:fixed;">
                 <thead>
                    <tr>
-                     <th>name</th>
-                     <th>type</th>
-                     <th>description</th>
+                     <th>METHOD</th>
+                     <th>URL</th>
+                     <th>PARAMS</th>
+                     <th>EXAMPLE</th>
                    </tr>
                 </thead>
                 <tbody>
                    <tr>
-                     <td>text</td>
-                     <td>string</td>
-                     <td>title to display</td>
-                   </tr>
-                   <tr>
-                     <td>padding</td>
-                     <td>number</td>
-                     <td>padding around text</td>
+                     <td style="word-wrap: break-word;">GET</td>
+                     <td style="word-wrap: break-word;">https://unhrecipe.herokuapp.com/rest/recipes/</td>
+                     <td>-</td>
+                     <td style="word-wrap: break-word;">-</a></td>
                    </tr>
                 </tbody>
               </table>
-
-              <h4>Events</h4>
-              <p>This is a section, add any HTML here. Below is an example of table that can be used to describe events.</p>
+              <h4>RESPONSE</h4>
               <table class="table table-bordered">
                 <thead>
                    <tr>
-                     <th>event name</th>
-                     <th>description</th>
+                     <th>STATUS</th>
+                     <th>RESPONSE</th>
                    </tr>
                 </thead>
                 <tbody>
                    <tr>
-                     <td>click</td>
-                     <td>triggered when element is clicked</td>
+                     <td>200</td>
+                     <td>[{"name":"Dry Aloo Gobi","difficultyLevel":"Medium","recipeCategory":"Side Dish","cuisine":"Indian","prepTime":"00:45","cookTime":"00:15","recipePhotoLink":"http://media1.sailusfood.com/wp-content/uploads/2008/11/aloo-gobhi1.jpg","ingredients":null,"direction":null,"additionalNote":null,"yields":"4 servings","nutritionFacts":{"saturatedFat":"50","totalFat":"100","ServingSize":"2","calories":"100"}}]</td>
+                   </tr>
+                   <tr>
+                     <td>400</td>
+                     <td>Exception Message</td>
                    </tr>
                 </tbody>
               </table>
-
-              <h4>Example</h4>
-              <p>Below is an example code block and demo button.</p>
-              <pre>
-function foo(){
-  return bar;
-}             </pre>
-              <a class="btn btn-primary">Demo</a>
-
+              <div id="item3" class="content section">
+                <h3>Search Recipe</h3>
+                <p>Simple search with query</p>
+                <h4>REQUEST</h4>
+                <table class="table table-bordered" style="table-layout:fixed;">
+                  <thead>
+                     <tr>
+                       <th>METHOD</th>
+                       <th>URL</th>
+                       <th>PARAMS</th>
+                       <th>EXAMPLE</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                       <td style="word-wrap: break-word;">GET</td>
+                       <td style="word-wrap: break-word;">https://unhrecipe.herokuapp.com/rest/recipes/search</td>
+                       <td>?q=query</td>
+                       <td style="word-wrap: break-word;"><a target="_blank" href="https://unhrecipe.herokuapp.com/rest/recipes/search?q=Italian">https://unhrecipe.herokuapp.com/rest/recipes/search?q=Italian</a></td>
+                     </tr>
+                  </tbody>
+                </table>
+                <h4>RESPONSE</h4>
+                <table class="table table-bordered">
+                  <thead>
+                     <tr>
+                       <th>STATUS</th>
+                       <th>RESPONSE</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                       <td>200</td>
+                       <td>[{"name":"Mom's Zucchini Pancakes","difficultyLevel":"Medium","recipeCategory":"Side Dish","cuisine":"Italian","prepTime":"00:35","cookTime":"00:10","recipePhotoLink":"http://images.media-allrecipes.com/userphotos/720x405/3457254.jpg","ingredients":[{"ingredient":"Grated zucchini","qty":"2 cups"},{"ingredient":"Eggs beaten","qty":"2"},{"ingredient":"Chopped Green onion","qty":"2 cups"},{"ingredient":"All-purpose flour","qty":"1/2 cup"},{"ingredient":"Parmesan cheese","qty":"1/4 cup "},{"ingredient":"Baking Powder","qty":"1/2 tsp "},{"ingredient":"Green pees","qty":"1/2 cup "},{"ingredient":"Salt and pepper","qty":"1 tsp "},{"ingredient":"oil","qty":"3 tsp"}],"direction":"Blot grated zucchini with paper towels to remove moisture. Stir zucchini, eggs, and onion in a large bowl. Mix flour, Parmesan cheese, baking powder, salt, and oregano in a separate bowl; stir mixture into zucchini until batter is just moistened. Heat vegetable oil in a large skillet over medium-high heat. Drop rounded spoonfuls of zucchini batter into hot oil; pan fry until golden, 2 to 3 minutes per side. Drain pancakes on a paper towel-lined plate.","additionalNote":"Dont beat eggs more","yields":"4 servings","nutritionFacts":{"saturatedFat":"30","totalFat":"50","ServingSize":"2","calories":"100"}},{"name":"Pasta Salad","difficultyLevel":"Easy","recipeCategory":" Main Dish","cuisine":"Italian","prepTime":"00:30","cookTime":"00:15","recipePhotoLink":"http://life-in-the-lofthouse.com/wp-content/uploads/2014/07/Tri_Color_Pasta_Salad12.jpg","ingredients":[{"ingredient":"Tri-colored spiral pasta","qty":"1 Pound"},{"ingredient":"salad seasoning mix","qty":"6 tsp"},{"ingredient":"Cherry tomatoes","qty":"2 cups"},{"ingredient":"Green Bell pepper","qty":"1 cup"},{"ingredient":"Black olives","qty":"1 cup"},{"ingredient":"Broccoli","qty":"1 cup"}],"direction":"In a large pot of salted boiling water, cook pasta until al dente, rinse under cold water and drain. Whisk together the salad spice mix and Italian dressing. In a salad bowl, combine the pasta, cherry tomatoes, bell peppers and olives. Pour dressing over salad; toss and refrigerate overnight.","additionalNote":"Dont cook pasta for long time because it will loose its taste, texture and nutritional value","yields":"4 servings","nutritionFacts":{"saturatedFat":"20","totalFat":"50","ServingSize":"4","calories":"100"}}]</td>
+                     </tr>
+                     <tr>
+                       <td>400</td>
+                       <td>Exception Message</td>
+                     </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>Search recipe with filter</p>
+              <table class="table table-bordered" style="table-layout:fixed;">
+                <thead>
+                   <tr>
+                     <th>METHOD</th>
+                     <th>URL</th>
+                     <th>PARAMS</th>
+                     <th>EXAMPLE</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                     <td style="word-wrap: break-word;">GET</td>
+                     <td style="word-wrap: break-word;">https://unhrecipe.herokuapp.com/rest/recipes/search/filter</td>
+                     <td>{key}/{value}</td>
+                     <td style="word-wrap: break-word;"><a target="_blank" href="https://unhrecipe.herokuapp.com/rest/recipes/search/filter/cuisine/Italian/true?q=Pancakes">https://unhrecipe.herokuapp.com/rest/recipes/search/filter/cuisine/Italian/true?q=Pancakes</a></td>
+                     <td style="word-wrap: break-word;"><a target="_blank" href="https://unhrecipe.herokuapp.com/rest/recipes/search/filter/cuisine/Italian/false?q=Pancakes">https://unhrecipe.herokuapp.com/rest/recipes/search/filter/cuisine/Italian/false?q=Pancakes</a></td>
+                   </tr>
+                </tbody>
+              </table>
+              <h4>RESPONSE</h4>
+              <table class="table table-bordered">
+                <thead>
+                   <tr>
+                     <th>STATUS</th>
+                     <th>RESPONSE</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                     <td>200</td>
+                     <td>[{"name":"Mom's Zucchini Pancakes","difficultyLevel":"Medium","recipeCategory":"Side Dish","cuisine":"Italian","prepTime":"00:35","cookTime":"00:10","recipePhotoLink":"http://images.media-allrecipes.com/userphotos/720x405/3457254.jpg","ingredients":[{"ingredient":"Grated zucchini","qty":"2 cups"},{"ingredient":"Eggs beaten","qty":"2"},{"ingredient":"Chopped Green onion","qty":"2 cups"},{"ingredient":"All-purpose flour","qty":"1/2 cup"},{"ingredient":"Parmesan cheese","qty":"1/4 cup "},{"ingredient":"Baking Powder","qty":"1/2 tsp "},{"ingredient":"Green pees","qty":"1/2 cup "},{"ingredient":"Salt and pepper","qty":"1 tsp "},{"ingredient":"oil","qty":"3 tsp"}],"direction":"Blot grated zucchini with paper towels to remove moisture. Stir zucchini, eggs, and onion in a large bowl. Mix flour, Parmesan cheese, baking powder, salt, and oregano in a separate bowl; stir mixture into zucchini until batter is just moistened. Heat vegetable oil in a large skillet over medium-high heat. Drop rounded spoonfuls of zucchini batter into hot oil; pan fry until golden, 2 to 3 minutes per side. Drain pancakes on a paper towel-lined plate.","additionalNote":"Dont beat eggs more","yields":"4 servings","nutritionFacts":{"saturatedFat":"30","totalFat":"50","ServingSize":"2","calories":"100"}},{"name":"Pasta Salad","difficultyLevel":"Easy","recipeCategory":" Main Dish","cuisine":"Italian","prepTime":"00:30","cookTime":"00:15","recipePhotoLink":"http://life-in-the-lofthouse.com/wp-content/uploads/2014/07/Tri_Color_Pasta_Salad12.jpg","ingredients":[{"ingredient":"Tri-colored spiral pasta","qty":"1 Pound"},{"ingredient":"salad seasoning mix","qty":"6 tsp"},{"ingredient":"Cherry tomatoes","qty":"2 cups"},{"ingredient":"Green Bell pepper","qty":"1 cup"},{"ingredient":"Black olives","qty":"1 cup"},{"ingredient":"Broccoli","qty":"1 cup"}],"direction":"In a large pot of salted boiling water, cook pasta until al dente, rinse under cold water and drain. Whisk together the salad spice mix and Italian dressing. In a salad bowl, combine the pasta, cherry tomatoes, bell peppers and olives. Pour dressing over salad; toss and refrigerate overnight.","additionalNote":"Dont cook pasta for long time because it will loose its taste, texture and nutritional value","yields":"4 servings","nutritionFacts":{"saturatedFat":"20","totalFat":"50","ServingSize":"4","calories":"100"}}]</td>
+                   </tr>
+                   <tr>
+                     <td>400</td>
+                     <td>Exception Message</td>
+                   </tr>
+                </tbody>
+              </table>
             </div>
+             <div id="item4" class="content section">
+            <h3>GET app details by properties file</h3>
+              <p>GET app details by properties file</p>
 
-            <hr>
-            <div id="item3" class="content section">
-              <h3>Item #3</h3>
-              <p>This is a section, add any HTML here. Below is an example of code block and table that can be used to describe components.</p>
-
-              <h4>Method</h4>
-              <p>Here is example of <code>highlighted</code> code element, by embedding in <code>&lt;code&gt;</code> tag, be sure to escape &lt; and &gt;</p>
-              <pre>
-function foo(){
-  return bar;
-}             </pre>
-
-              <h4>Options</h4>
-              <p>This is a section, add any HTML here. Below is an example of table that can be used to describe options.</p>
-              <table class="table table-bordered">
+              <h4>REQUEST</h4>
+              <table class="table table-bordered" style="table-layout:fixed;">
                 <thead>
                    <tr>
-                     <th>name</th>
-                     <th>type</th>
-                     <th>description</th>
+                     <th>METHOD</th>
+                     <th>URL</th>
+                     <th>PARAMS</th>
+                     <th>EXAMPLE</th>
                    </tr>
                 </thead>
                 <tbody>
                    <tr>
-                     <td>text</td>
-                     <td>string</td>
-                     <td>title to display</td>
-                   </tr>
-                   <tr>
-                     <td>padding</td>
-                     <td>number</td>
-                     <td>padding around text</td>
+                     <td style="word-wrap: break-word;">GET</td>
+                     <td style="word-wrap: break-word;">https://unhrecipe.herokuapp.com/rest/recipes/getappdetails</td>
+                     <td></td>
+                     <td style="word-wrap: break-word;"><a target="_blank" href="https://unhrecipe.herokuapp.com/rest/recipes/getappdetails">https://unhrecipe.herokuapp.com/rest/recipes/getappdetails</a></td>
                    </tr>
                 </tbody>
               </table>
-
-              <h4>Events</h4>
-              <p>This is a section, add any HTML here. Below is an example of table that can be used to describe events.</p>
+              <h4>RESPONSE</h4>
               <table class="table table-bordered">
                 <thead>
                    <tr>
-                     <th>event name</th>
-                     <th>description</th>
+                     <th>STATUS</th>
+                     <th>RESPONSE</th>
                    </tr>
                 </thead>
                 <tbody>
                    <tr>
-                     <td>click</td>
-                     <td>triggered when element is clicked</td>
+                     <td>200</td>
+                     <td>{ "ApplicationName": "Recipe Application","team": "Keertana And Pooja", "Version": "1.0", "course": "Software As a Service"}
+                     </td>
+                   </tr>
+                   <tr>
+                     <td>400</td>
+                     <td>{"There was an error in getting details from  properties file"}</td>
                    </tr>
                 </tbody>
               </table>
-
-              <h4>Example</h4>
-              <p>Below is an example code block and demo button.</p>
-              <pre>
-function foo(){
-  return bar;
-}             </pre>
-              <a class="btn btn-primary">Demo</a>
             </div>
-
-            <hr>
-            <div id="item4" class="content section">
-              <h3>Item #4</h3>
-              <p>This is a section, add any HTML here. Below is an example of code block and table that can be used to describe components.</p>
-
-              <h4>Method</h4>
-              <p>Here is example of <code>highlighted</code> code element, by embedding in <code>&lt;code&gt;</code> tag, be sure to escape &lt; and &gt;</p>
-              <pre>
-function foo(){
-  return bar;
-}             </pre>
-
-              <h4>Options</h4>
-              <p>This is a section, add any HTML here. Below is an example of table that can be used to describe options.</p>
-              <table class="table table-bordered">
-                <thead>
-                   <tr>
-                     <th>name</th>
-                     <th>type</th>
-                     <th>description</th>
-                   </tr>
-                </thead>
-                <tbody>
-                   <tr>
-                     <td>text</td>
-                     <td>string</td>
-                     <td>title to display</td>
-                   </tr>
-                   <tr>
-                     <td>padding</td>
-                     <td>number</td>
-                     <td>padding around text</td>
-                   </tr>
-                </tbody>
-              </table>
-
-              <h4>Events</h4>
-              <p>This is a section, add any HTML here. Below is an example of table that can be used to describe events.</p>
-              <table class="table table-bordered">
-                <thead>
-                   <tr>
-                     <th>event name</th>
-                     <th>description</th>
-                   </tr>
-                </thead>
-                <tbody>
-                   <tr>
-                     <td>click</td>
-                     <td>triggered when element is clicked</td>
-                   </tr>
-                </tbody>
-              </table>
-
-              <h4>Example</h4>
-              <p>Below is an example code block and demo button.</p>
-              <pre>
-function foo(){
-  return bar;
-}             </pre>
-              <a class="btn btn-primary">Demo</a>
-            </div>
-
-            <hr>
             <div id="item5" class="content section">
-              <h3>Item #5</h3>
-              <p>This is a section, add any HTML here. Below is an example of code block and table that can be used to describe components.</p>
+            <h3>Post Recipe</h3>
+              <p>Post API for sending name and direction</p>
 
-              <h4>Method</h4>
-              <p>Here is example of <code>highlighted</code> code element, by embedding in <code>&lt;code&gt;</code> tag, be sure to escape &lt; and &gt;</p>
-              <pre>
-function foo(){
-  return bar;
-}             </pre>
-
-              <h4>Options</h4>
-              <p>This is a section, add any HTML here. Below is an example of table that can be used to describe options.</p>
-              <table class="table table-bordered">
+              <h4>REQUEST</h4>
+              <table class="table table-bordered" style="table-layout:fixed;">
                 <thead>
                    <tr>
-                     <th>name</th>
-                     <th>type</th>
-                     <th>description</th>
+                     <th>METHOD</th>
+                     <th>URL</th>
+                     <th>PARAMS</th>
+                     <th>EXAMPLE</th>
+                     <th>BODY</th>
                    </tr>
                 </thead>
                 <tbody>
                    <tr>
-                     <td>text</td>
-                     <td>string</td>
-                     <td>title to display</td>
-                   </tr>
-                   <tr>
-                     <td>padding</td>
-                     <td>number</td>
-                     <td>padding around text</td>
+                     <td style="word-wrap: break-word;">POST</td>
+                     <td style="word-wrap: break-word;">https://unhrecipe.herokuapp.com/rest/recipes/simplePostRecipe</td>
+                     <td></td>
+                     <td style="word-wrap: break-word;"><a target="_blank" href="https://unhrecipe.herokuapp.com/rest/recipes/simplePostRecipe">https://unhrecipe.herokuapp.com/rest/recipes/simplePostRecipe</a></td>
+                     <td style="word-wrap: break-word;">{"name":"Okara fry","difficultyLevel":"Medium","recipeCategory":"Side Dish","cuisine":"Indian","prepTime":"00:45","cookTime":"00:15","recipePhotoLink":"http://media1.sailusfood.com/wp-content/uploads/2008/11/aloo-gobhi1.jpg","ingredients":null,"direction":null,"additionalNote":null,"yields":"4 servings","nutritionFacts":{"saturatedFat":"50","totalFat":"100","ServingSize":"2","calories":"100"}}</td>
+                     <td>This API uses form data type</td>
                    </tr>
                 </tbody>
               </table>
-
-              <h4>Events</h4>
-              <p>This is a section, add any HTML here. Below is an example of table that can be used to describe events.</p>
+              <h4>RESPONSE</h4>
               <table class="table table-bordered">
                 <thead>
                    <tr>
-                     <th>event name</th>
-                     <th>description</th>
+                     <th>STATUS</th>
+                     <th>RESPONSE</th>
                    </tr>
                 </thead>
                 <tbody>
                    <tr>
-                     <td>click</td>
-                     <td>triggered when element is clicked</td>
+                     <td>200</td>
+                     <td>Success</td>
+                   </tr>
+                   <tr>
+                     <td>400</td>
+                     <td>{"There was an error in posting the recipe"}</td>
+                   </tr>
+                </tbody>
+              </table>
+            </div>
+
+              <p>Post API for creating recipes</p>
+
+              <h4>REQUEST</h4>
+              <table class="table table-bordered" style="table-layout:fixed;">
+                <thead>
+                   <tr>
+                     <th>METHOD</th>
+                     <th>URL</th>
+                     <th>PARAMS</th>
+                     <th>EXAMPLE</th>
+                     <th>BODY</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                     <td style="word-wrap: break-word;">POST</td>
+                     <td style="word-wrap: break-word;">https://unhrecipe.herokuapp.com/rest/recipes/createRecipe</td>
+                     <td></td>
+                     <td style="word-wrap: break-word;"><a target="_blank" href="https://unhrecipe.herokuapp.com/rest/recipes/createRecipe">https://unhrecipe.herokuapp.com/rest/recipes/createRecipe</a></td>
+                     <td style="word-wrap: break-word;">{"name":"Brinjal curry","difficultyLevel":"Medium","recipeCategory":"Side Dish","cuisine":"Indian","prepTime":"00:45","cookTime":"00:15","recipePhotoLink":"http://media1.sailusfood.com/wp-content/uploads/2008/11/aloo-gobhi1.jpg","ingredients":null,"direction":null,"additionalNote":null,"yields":"4 servings","nutritionFacts":{"saturatedFat":"50","totalFat":"100","ServingSize":"2","calories":"100"}}</td>
+                   </tr>
+                </tbody>
+              </table>
+              <h4>RESPONSE</h4>
+              <table class="table table-bordered">
+                <thead>
+                   <tr>
+                     <th>STATUS</th>
+                     <th>RESPONSE</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                     <td>200</td>
+                     <td>Success</td>
+                   </tr>
+                   <tr>
+                     <td>400</td>
+                     <td>{"There was an error in posting the recipe"}</td>
                    </tr>
                 </tbody>
               </table>
 
-              <h4>Example</h4>
-              <p>Below is an example code block and demo button.</p>
-              <pre>
-function foo(){
-  return bar;
-}             </pre>
-              <a class="btn btn-primary">Demo</a>
-            </div>
+            <div id="item6" class="content section">
+            <h3>PUT Recipe</h3>
+              <p>Put API for updating the entire recipe</p>
 
-            <hr>
-            <div class="content">
-              <p>This is the end of component sections.</p>
+              <h4>REQUEST</h4>
+              <table class="table table-bordered" style="table-layout:fixed;">
+                <thead>
+                   <tr>
+                     <th>METHOD</th>
+                     <th>URL</th>
+                     <th>PARAMS</th>
+                     <th>EXAMPLE</th>
+                     <th>BODY</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                     <td style="word-wrap: break-word;">PUT</td>
+                     <td style="word-wrap: break-word;">https://unhrecipe.herokuapp.com/rest/recipes/updateAll</td>
+                     <td>{name}</td>
+                     <td style="word-wrap: break-word;"><a target="_blank" href="https://unhrecipe.herokuapp.com/rest/recipes/updateAll/Kheer">https://unhrecipe.herokuapp.com/rest/recipes/updateAll/Kheer</a></td>
+                     <td style="word-wrap: break-word;">{"name":"Kheer"","difficultyLevel":"Medium","recipeCategory":"Side Dish","cuisine":"Indian","prepTime":"00:45","cookTime":"00:15","recipePhotoLink":"http://media1.sailusfood.com/wp-content/uploads/2008/11/aloo-gobhi1.jpg","ingredients":null,"direction":null,"additionalNote":null,"yields":"4 servings","nutritionFacts":{"saturatedFat":"50","totalFat":"100","ServingSize":"2","calories":"100"}}</td>
+                   </tr>
+                </tbody>
+              </table>
+              <h4>RESPONSE</h4>
+              <table class="table table-bordered">
+                <thead>
+                   <tr>
+                     <th>STATUS</th>
+                     <th>RESPONSE</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                     <td>200</td>
+                     <td>Success</td>
+                   </tr>
+                   <tr>
+                     <td>400</td>
+                     <td>{"There was an error in updating the recipe by name"}</td>
+                   </tr>
+                </tbody>
+              </table>
             </div>
+              <p>Put API for partially updating the recipes</p>
+
+              <h4>REQUEST</h4>
+              <table class="table table-bordered" style="table-layout:fixed;">
+                <thead>
+                   <tr>
+                     <th>METHOD</th>
+                     <th>URL</th>
+                     <th>PARAMS</th>
+                     <th>EXAMPLE</th>
+                     <th>BODY</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                     <td style="word-wrap: break-word;">PUT</td>
+                     <td style="word-wrap: break-word;">https://unhrecipe.herokuapp.com/rest/recipes/partialUpdate</td>
+                     <td>{name}</td>
+                     <td style="word-wrap: break-word;"><a target="_blank" href="https://unhrecipe.herokuapp.com/rest/recipes/partialUpdate/Kheer">https://unhrecipe.herokuapp.com/rest/recipes/partialUpdate/Kheer</a></td>
+                     <td style="word-wrap: break-word;">{"name":"Kheer"","difficultyLevel":"Medium","recipeCategory":"Side Dish","cuisine":"Indian"}</td>
+                   </tr>
+                </tbody>
+              </table>
+              <h4>RESPONSE</h4>
+              <table class="table table-bordered">
+                <thead>
+                   <tr>
+                     <th>STATUS</th>
+                     <th>RESPONSE</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                     <td>200</td>
+                     <td>Success</td>
+                   </tr>
+                   <tr>
+                     <td>400</td>
+                     <td>{"There was an error in partial updating the recipe in any fields "}</td>
+                   </tr>
+                </tbody>
+              </table>
+            <div id="item7" class="content section">
+            <h3>DELETE Recipe</h3>
+              <p>Delete API to delete by Id </p>
+
+              <h4>REQUEST</h4>
+              <table class="table table-bordered" style="table-layout:fixed;">
+                <thead>
+                   <tr>
+                     <th>METHOD</th>
+                     <th>URL</th>
+                     <th>PARAMS</th>
+                     <th>EXAMPLE</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                     <td style="word-wrap: break-word;">DELETE</td>
+                     <td style="word-wrap: break-word;">https://unhrecipe.herokuapp.com/rest/recipes/deleteById</td>
+                     <td>{Id}</td>
+                     <td style="word-wrap: break-word;"><a target="_blank" href="https://unhrecipe.herokuapp.com/rest/recipes/deleteById/5728d1c3c80eb653c3026026">https://unhrecipe.herokuapp.com/rest/recipes/deleteById/5728d1c3c80eb653c3026026</a></td>
+                   </tr>
+                </tbody>
+              </table>
+              <h4>RESPONSE</h4>
+              <table class="table table-bordered">
+                <thead>
+                   <tr>
+                     <th>STATUS</th>
+                     <th>RESPONSE</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                     <td>200</td>
+                     <td>Success</td>
+                   </tr>
+                   <tr>
+                     <td>400</td>
+                     <td>{"There was an error in deleting the recipe by Id"}</td>
+                   </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Delete API to delete by name </p>
+
+              <h4>REQUEST</h4>
+              <table class="table table-bordered" style="table-layout:fixed;">
+                <thead>
+                   <tr>
+                     <th>METHOD</th>
+                     <th>URL</th>
+                     <th>PARAMS</th>
+                     <th>EXAMPLE</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                     <td style="word-wrap: break-word;">DELETE</td>
+                     <td style="word-wrap: break-word;">https://unhrecipe.herokuapp.com/rest/recipes/delete</td>
+                     <td>{name}</td>
+                     <td style="word-wrap: break-word;"><a target="_blank" href="https://unhrecipe.herokuapp.com/rest/recipes/delete/Blueberray Crub pie">https://unhrecipe.herokuapp.com/rest/recipes/delete/Blueberray Crub pie</a></td>
+                   </tr>
+                </tbody>
+              </table>
+              <h4>RESPONSE</h4>
+              <table class="table table-bordered">
+                <thead>
+                   <tr>
+                     <th>STATUS</th>
+                     <th>RESPONSE</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                     <td>200</td>
+                     <td>Success</td>
+                   </tr>
+                   <tr>
+                     <td>400</td>
+                     <td>{"There was an error in deleting the recipe by name"}</td>
+                   </tr>
+                </tbody>
+              </table>
           </div><!-- /.col-sm-4 -->
         </div>
-
       </div>
-
-      <div class="tab-pane" id="about">
-        <h1>About</h1>
-        <p class="lead">This section is for about and resources.</p>
-      </div>
-
     </div><!-- /.container -->
 
 
@@ -474,5 +581,3 @@ function foo(){
     </script>
   </body>
 </html>
-Status API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Contact Help

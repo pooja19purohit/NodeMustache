@@ -15,10 +15,10 @@
     <link href="http://fonts.googleapis.com/css?family=Raleway:300,400,700,900" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet" type="text/css">
     <!-- CSS files -->
-    <link rel="stylesheet" href="/css/plugins.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./css/plugins.css">
+    <link rel="stylesheet" href="./css/style.css">
     <!-- JS files -->
-    <script src="/js/jquery.js"></script>
+    <script src="./js/jquery.js"></script>
     <script>
       var counter = 0;
       var positionLeft = 0;
@@ -46,7 +46,7 @@
       			<div class="inner">
       				<h1 id="ht-logo">
       					<a href="index.html">
-      						<img src="/images/logo.png" alt="">
+      						<img src="images/logo.png" alt="">
       					</a>
       				</h1>
       				<!-- / #logo -->
@@ -65,7 +65,7 @@
       							</li>
       						</ul>
       						<ul>
-										<li><a href="getOne.html">GET SINGLE RECIPE</a></li>
+      							<li><a href="getOne.html">GET SINGLE RECIPE</a></li>
 
       							<li><a href="/getAppDetails">GET APP DETAILS</a></li>
       						</ul>
@@ -81,59 +81,15 @@
       	<!-- / .ht-container -->
       </header>
       <!-- END | Header -->
-
-<section class="ht-section hs-recipe single">
-	<header class="hs-header">
-		<div class="container">
-			<p class="entry-meta">
-				<h2 class="heading">{{name}}</h2>
-				<span class="meta-level master">LEVEL: {{difficultyLevel}}<span></span></span>
-				<span class="meta-time">PREP TIME: {{prepTime}}</span>
-        <span class="meta-time">COOK TIME: {{cookTime}}</span>
-			</p>
-			<h2 class="heading"></h2>
-		</div>
-	</header>
-	<!-- / .hs-header -->
-	<div class="hs-content">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-6">
-					<div class="entry entry-description">
-						<h4 class="entry-title">Directions</h4>
-						<p>{{direction}}</p>
-					</div>
-					<!-- / .entry-description -->
-				<!--	<div class="entry entry-nutri">
-						<h4 class="entry-title">Nutrition</h4>
-						<div id="checking">
-						<table class="table">
-							<tbody id="nutritionTable">
-							</tbody>
-						</table>
-					</div>
-				</div>-->
-				<div class="col-xs-12 col-sm-6">
-					<!-- / .entry-action -->
-					<div class="entry entry-instruction">
-						<h4 class="entry-title">additionalNote</h4>
-						<p>{{additionalNote}}</p>
-						<dl class="dl-horizontal">
-							<dd></dd>
-						</dl>
-					</div>
-					<!-- / .entry-instruction -->
-				</div>
-			</div>
-			<!-- / .row -->
-		</div>
-		<!-- / .container -->
-	</div>
-	<!-- / .hs-content -->
-</section>
-
-<script src="/js/plugins.js"></script>
-<script src="/js/custom.js"></script>
-
-
-</body></html>
+      <section class="ht-section">
+      	<div class="container">
+      		<div class="row">
+            <p>Application: {{ApplicationName}} </p>
+            <p>Team: {{team}} </p>
+            <p>Course: {{course}} </p>
+          </div>
+        </div>
+      <script src="./js/plugins.js"></script>
+      <script src="./js/custom.js"></script>
+      </body>
+      </html>

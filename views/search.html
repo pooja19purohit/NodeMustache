@@ -1,4 +1,86 @@
+<html lang="en">
+  <head>
+    <!-- Basic need -->
+    <title>Culinier Template</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <link rel="profile" href="#">
+    <link rel="shortcut icon" href="./images/favicon.ico">
+    <!-- Mobile specific meta -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone-no">
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Raleway:300,400,700,900" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet" type="text/css">
+    <!-- CSS files -->
+    <link rel="stylesheet" href="./css/plugins.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- JS files -->
+    <script src="./js/jquery.js"></script>
+    <script>
+      var counter = 0;
+      var positionLeft = 0;
+      var positionTop = 0;
+    </script>
+  </head>
+  <body>
+    <div class="ht-page-wrapper">
+      <!-- BEGIN | Header -->
+      <header id="ht-header" class="">
+      	<div class="mobile-control-toggle">
+      		<div class="container">
+      			<button type="button" class="mobile-nav-toggle" data-target="#menu-list">
+      				<span class="sr-only">Toggle mobile menu</span>
+      				<span class="icon-bar icon-bar-1"></span>
+      				<span class="icon-bar icon-bar-2"></span>
+      				<span class="icon-bar icon-bar-3"></span>
+      			</button>
+      		</div>
+      	</div>
 
+      	<!-- available classes: logo-center, logo-left -->
+      	<div class="ht-main-navbar logo-center sticky-nav scroll-up-nav">
+      		<div class="container">
+      			<div class="inner">
+      				<h1 id="ht-logo">
+      					<a href="index.html">
+      						<img src="images/logo.png" alt="">
+      					</a>
+      				</h1>
+      				<!-- / #logo -->
+      				<div class="ht-main-nav-wrapper">
+      					<nav id="ht-main-nav">
+      						<ul>
+      							<li>
+      								<a href="/recipes">ALL RECIPES</a>
+      							</li>
+      							<!-- available classes: mega-menu,active -->
+      							<li>
+      								<a href="search.html">SEARCH RECIPE</a>
+      							</li>
+      							<li>
+      								<a href="submitRecipe.html">SUBMIT RECIPE</a>
+      							</li>
+      						</ul>
+      						<ul>
+										<li><a href="getOne.html">GET SINGLE RECIPE</a></li>
+
+      							<li><a href="/getAppDetails">GET APP DETAILS</a></li>
+      						</ul>
+      					</nav>
+      					<!-- / #ht-main-nav -->
+      				</div>
+      				<!-- / .pull-right -->
+      			</div>
+      			<!-- / .inner -->
+      		</div>
+      		<!-- / .container -->
+      	</div>
+      	<!-- / .ht-container -->
+      </header>
+      <!-- END | Header -->
 <section class="ht-section">
 	<h2 class="sr-only">Search Advanced</h2>
 	<div class="container">
@@ -31,3 +113,8 @@
 		</div>
 	</div>
 </section>
+
+<script src="./js/plugins.js"></script>
+<script src="./js/custom.js"></script>
+</body>
+</html>

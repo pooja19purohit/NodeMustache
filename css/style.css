@@ -1994,7 +1994,7 @@ dd {
   color: #fff !important;
 }
 
-/* 2.2.4 LAYOUT > HEADER > 
+/* 2.2.4 LAYOUT > HEADER >
 ---------------------------------------*/
 .search-toggle {
   position: absolute;
@@ -2917,7 +2917,7 @@ dd {
 .hs-recipes.grid .we .entry-meta,
 .hs-recipes.grid .we .we-meta {
   overflow: hidden;
-  margin: 15px 0;
+  margin: 5px 0;
   color: #acacac;
   font-size: 12px;
   font-size: 1.2rem;
@@ -2939,7 +2939,7 @@ dd {
 }
 .hs-recipes.grid .entry .meta-difficulty,
 .hs-recipes.grid .we .meta-difficulty {
-  margin-right: 15px;
+  margin-right: 6px;
 }
 .hs-recipes.grid .entry .meta-difficulty:before,
 .hs-recipes.grid .we .meta-difficulty:before {
@@ -3337,7 +3337,7 @@ dd {
 }
 .hs-recipe.related .entry-media {
   float: left;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 .hs-recipe.related .entry:hover .entry-title {
   color: #f8a631;
@@ -4191,11 +4191,11 @@ dd {
 }
 .hs-post.single .entry-author .inner:before {
   right: 100%;
-  margin-right: 15px;
+  margin-right: 8px;
 }
 .hs-post.single .entry-author .inner:after {
   left: 100%;
-  margin-left: 15px;
+  margin-left: 8px;
 }
 .hs-post.single .entry-author img {
   width: 90px;
@@ -5779,7 +5779,7 @@ dd {
 }
 @media (max-width: 767px) {
   .hs-comment .comment-author {
-    margin-right: 15px;
+    margin-right: 6px;
   }
 }
 .hs-comment .avatar {
@@ -6252,7 +6252,7 @@ dd {
   color: #f8c231;
 }
 .hs-contributor .main-content .recipe .meta-difficulty {
-  margin-right: 15px;
+  margin-right: 6px;
 }
 .hs-contributor .main-content .recipe .meta-difficulty:before {
   content: '';

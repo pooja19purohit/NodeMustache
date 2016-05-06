@@ -23,7 +23,7 @@ console.log("----------");
 console.log("Server started");
 
 function loadTemplate(template) {
-   console.log((app.get('views') + '/' +template+ '.html').toString());
+   //console.log((app.get('views') + '/' +template+ '.html').toString());
     return fs.readFileSync(app.get('views') + '/' +template+ '.html').toString();
 }
 
@@ -43,6 +43,17 @@ app.get('/getRecipe/:name/:value', function(req, res){
   unirest.get('https://unhrecipe.herokuapp.com/rest/recipes/getone/' + req.params.name + '/' + req.params.value)
   .end(function (response) {
     var recipeData = response.body;
+    console.log(recipeData);
+    var html = mustache.to_html(loadTemplate('recipePage'), recipeData);
+    res.send(html);
+});
+});
+
+app.post('/getRecipe', function(req, res){
+  unirest.get('https://unhrecipe.herokuapp.com/rest/recipes/getone/' + req.body.filterField + '/' + req.body.filterValue)
+  .end(function (response) {
+    var recipeData = response.body;
+    console.log(recipeData);
     var html = mustache.to_html(loadTemplate('recipePage'), recipeData);
     res.send(html);
 });
@@ -53,17 +64,18 @@ app.post('/postRecipe' , function(req,res) {
   .type('json')
   .send(req.body)
   .end(function (response) {
-  console.log(response);
+    res.render('/');
 });
 
 });
 
 app.post('/searchQuery' , function(req,res) {
   if(req.body.filterField!= null && req.body.filterValue != null) {
-    unirest.get('https://unhrecipe.herokuapp.com/rest/recipes/search/filter/' + req.body.filterField + '/' + req.body.filterValue)
+    unirest.get('https://unhrecipe.herokuapp.com/rest/recipes/search/filter/' + req.body.filterField + '/' + req.body.filterValue + '/true')
     .query({"q" : req.body.query})
     .end(function (response) {
       var rData = response.body;
+      console.log(rData);
       var html = mustache.to_html(loadTemplate('listAll'), rData);
       res.send(html);
   });
@@ -77,6 +89,18 @@ else {
     res.send(html);
 });
 }
+});
+
+app.get('/getAppDetails', function(req,res) {
+  unirest.get('https://unhrecipe.herokuapp.com/rest/recipes/getappdetails')
+  .end(function (response) {
+    //var page = fs.readFileSync('listing.html', "utf8"); // bring in the HTML file
+    var rData = response.body;
+    //console.log(response.body);
+    var html = mustache.to_html(loadTemplate('getAppDetails'), rData);
+    res.send(html);
+    //console.log(response.body);
+});
 });
 
     //Setup your client

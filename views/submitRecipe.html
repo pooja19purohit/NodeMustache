@@ -3,12 +3,6 @@
 	<!-- Basic need -->
 	<title>Culinier</title>
 	<meta charset="UTF-8">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="">
-	<link rel="profile" href="#">
-	<link rel="shortcut icon" href="images/favicon.ico">
-
 	<!-- Fonts -->
 	<link href="http://fonts.googleapis.com/css?family=Raleway:300,400,700,900" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet" type="text/css">
@@ -65,21 +59,21 @@
 				<div class="ht-main-nav-wrapper">
 					<nav id="ht-main-nav">
 						<ul>
-							<li class="current-menu-item menu-item-has-children dropdown-menu">
+							<li>
 								<a href="/recipes">ALL RECIPES</a>
 							</li>
 							<!-- available classes: mega-menu,active -->
-							<li class="menu-item-has-children dropdown-menu">
+							<li>
 								<a href="search.html">SEARCH RECIPE</a>
 							</li>
-							<li class="menu-item-has-children dropdown-menu">
+							<li>
 								<a href="submitRecipe.html">SUBMIT RECIPE</a>
 							</li>
 						</ul>
 						<ul>
-							<li><a href="">GET SINGLE RECIPE</a></li>
+							<li><a href="getOne.html">GET SINGLE RECIPE</a></li>
 
-							<li><a href="">GET APP DETAILS</a></li>
+							<li><a href="/getAppDetails">GET APP DETAILS</a></li>
 						</ul>
 					</nav>
 					<!-- / #ht-main-nav -->
@@ -107,7 +101,7 @@
 					<form method="post" action="/postRecipe">
 						<div class="form-group col-sm-6">
 							<label>Recipe title</label>
-							<input type="text" name="name">
+							<input type="text" name="name" required>
 							<p class="des">Keep it short and descriptive</p>
 						</div>
 						<div class="form-group col-sm-12">
