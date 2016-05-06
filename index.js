@@ -64,7 +64,8 @@ app.post('/postRecipe' , function(req,res) {
   .type('json')
   .send(req.body)
   .end(function (response) {
-    console.log("hello");
+    console.log("Added");
+    res.redirect('/');
 });
 
 });
@@ -75,7 +76,6 @@ app.post('/searchQuery' , function(req,res) {
     .query({"q" : req.body.query})
     .end(function (response) {
       var rData = response.body;
-      console.log(rData);
       var html = mustache.to_html(loadTemplate('listAll'), rData);
       res.send(html);
   });
