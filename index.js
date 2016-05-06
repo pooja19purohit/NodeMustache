@@ -64,7 +64,7 @@ app.post('/postRecipe' , function(req,res) {
   .type('json')
   .send(req.body)
   .end(function (response) {
-    res.render('/');
+    console.log("hello");
 });
 
 });
