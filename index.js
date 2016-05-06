@@ -71,7 +71,7 @@ app.post('/postRecipe' , function(req,res) {
 
 app.post('/searchQuery' , function(req,res) {
   if(req.body.filterField!= null && req.body.filterValue != null) {
-    unirest.get('https://unhrecipe.herokuapp.com/rest/recipes/search/filter/' + req.body.filterField + '/' + req.body.filterValue + '/true')
+    unirest.get('https://unhrecipe.herokuapp.com/rest/recipes/search/filter/' + req.body.filterField + '/' + req.body.filterValue + '/false')
     .query({"q" : req.body.query})
     .end(function (response) {
       var rData = response.body;
